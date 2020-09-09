@@ -48,6 +48,14 @@ Sablier is maintained as a monorepo with multiple sub packages. Please find a co
 Find the addresses for our smart contracts below. They have been audited by [Quantstamp](https://github.com/sablierhq/sablier/tree/audit-v2) and [ConsenSys
 Diligence](https://github.com/sablierhq/sablier/tree/audit-v1).
 
+### xDAI Chain
+
+| Name          | Description                      | Address                                                                                                               |
+| ------------- | -------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| CTokenManager | Whitelist and discard cTokens    | [0x52acf023d38A31f7e7bC92cCe5E68d36cC9752d6](https://blockscout.com/poa/xdai/address/0x52acf023d38A31f7e7bC92cCe5E68d36cC9752d6) |
+| Payroll       | Proxy used in our web interfaces | [0xF8E5E3b80393AeF6a3Fb9C3DbA24ec4233A477De](https://blockscout.com/poa/xdai/address/0xF8E5E3b80393AeF6a3Fb9C3DbA24ec4233A477De) |
+| Sablier       | Money streaming engine           | [0xE0F33E95aF46EAd1Fe181d2A74919bff903cD5d4](https://blockscout.com/poa/xdai/address/0xE0F33E95aF46EAd1Fe181d2A74919bff903cD5d4) |
+
 ### Ethereum Mainnet
 
 | Name          | Description                      | Address                                                                                                               |

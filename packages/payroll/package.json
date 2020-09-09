@@ -19,7 +19,7 @@
     "@paulrberg/eslint-config": "^1.0.0",
     "@sablier/dev-utils": "1.0.0",
     "@sablier/shared-contracts": "1.0.0",
-    "@truffle/hdwallet-provider": "^1.0.18",
+    "@truffle/hdwallet-provider": "^1.0.43",
     "dotenv": "^7.0.0",
     "eslint": "^6.1.0",
     "eslint-config-airbnb-base": "^14.0.0",

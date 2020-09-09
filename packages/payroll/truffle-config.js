@@ -46,7 +46,7 @@ module.exports = {
       gasPrice: ethers.utils.parseUnits("1", "gwei").toString(),
       network_id: "*",
       port: 8545,
-      skipDryRun: true,
+      // skipDryRun: true,
     },
     kovan: {
       provider: createProvider("kovan"),
@@ -69,6 +69,13 @@ module.exports = {
       network_id: "3",
       skipDryRun: true,
     },
+    xdai: {
+      provider: new HDWalletProvider(process.env.MNEMONIC, 'https://xdai.poanetwork.dev'),
+      gas: "6000000",
+      gasPrice: ethers.utils.parseUnits("1", "gwei").toString(),
+      network_id: "100",
+      // skipDryRun: true,
+    }
   },
   plugins: ["solidity-coverage"],
 };

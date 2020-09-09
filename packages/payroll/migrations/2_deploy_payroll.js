@@ -1,7 +1,10 @@
 /* global artifacts */
-const Payroll = artifacts.require("./Payroll.sol");
+const BigNumber = require("bignumber.js");
 
-module.exports = async (deployer, _, accounts) => {
+const Payroll = artifacts.require("./Payroll.sol");
+const DAIToken = artifacts.require("./DAIToken.sol");
+
+module.exports = async (deployer, network, accounts) => {
   await deployer.deploy(Payroll);
 
   if (process.env.CI) {
@@ -18,4 +21,14 @@ module.exports = async (deployer, _, accounts) => {
   const sablierAddress = process.env.SABLIER_ADDRESS;
   const opts = { from: accounts[0] };
   await payroll.methods["initialize(address,address,address)"](ownerAddress, signerAddress, sablierAddress, opts);
+
+  if (network !== "development") {
+    return;
+  }
+
+  const allowance = new BigNumber(3600).multipliedBy(1e18).toString(10);
+  await deployer.deploy(DAIToken);
+  const erc20 = await DAIToken.deployed();
+  await erc20.methods["initialize(string,string,uint8)"]("DAI", "DAI", "18");
+  await erc20.mint(accounts[0], allowance);
 };
